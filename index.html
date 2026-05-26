@@ -49,7 +49,7 @@
     </div>
 
     <!-- MAIN -->
-    <h1 style="font-size:50px;">🔥 Anime King 🔥</h1>
+    <h1 class="glow">🔥 Anime King 🔥</h1>
     <p>Welcome to my website 🚀</p>
 
     <img src="https://wallpaperaccess.com/full/22933.jpg" width="300" style="border-radius:20px;">
@@ -59,8 +59,29 @@
     <a href="https://youtube.com/@anime_king_256" target="_blank">
         <button class="btn">🎬 Visit My Channel</button>
     </a>
+<br><br>
 
+<iframe width="300" height="170"
+src="https://www.youtube.com/embed/mdrehaan258512"
+frameborder="0"
+allowfullscreen>
+</iframe>
     <p style="margin-top:50px;">💪 Created by Rehaan</p>
 
 </body>
 </html>
+.glow {
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px purple;
+    }
+    to {
+        text-shadow: 0 0 20px pink;
+    }
+}
