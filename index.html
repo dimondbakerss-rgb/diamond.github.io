@@ -6,35 +6,114 @@
     <style>
         body {
             margin: 0;
-            font-family: sans-serif;
-            background: linear-gradient(to right, black, purple);
+            font-family: Arial;
             color: white;
-            text-align: center;
+            background: radial-gradient(circle, #1a001a, black);
+            overflow-x: hidden;
         }
 
         .navbar {
             background: black;
             padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
         }
 
         .navbar a {
             color: white;
             margin: 20px;
             text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(to right, black, purple);
+        }
+
+        .fade {
+            animation: fadeIn 2s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .glow {
+            font-size: 50px;
+            animation: glow 1s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px purple, 0 0 20px purple; }
+            to { text-shadow: 0 0 20px pink, 0 0 30px pink; }
+        }
+
+        .video-box {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .video-box iframe {
+            width: 80%;
+            max-width: 600px;
+            height: 320px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px purple;
         }
 
         .btn {
-            padding: 15px;
-            font-size: 18px;
-            background: yellow;
+            padding: 12px 20px;
+            background: purple;
+            color: white;
             border: none;
             border-radius: 10px;
+            font-size: 18px;
             cursor: pointer;
+            transition: 0.3s;
         }
 
         .btn:hover {
-            background: orange;
+            box-shadow: 0 0 20px purple;
             transform: scale(1.1);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px;
+            font-size: 18px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #1c1c1c;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            width: 250px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px purple;
+        }
+
+        .footer {
+            background: black;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -48,54 +127,51 @@
         <a href="contact.html">Contact</a>
     </div>
 
-    <!-- MAIN -->
-    <h1 class="glow">🔥 Anime King 🔥</h1>
-    <p>Welcome to my website 🚀</p>
+    <!-- HERO -->
+    <div class="hero fade">
+        <h1 class="glow">🔥 Anime King 🔥</h1>
+        <p>Welcome to my anime world 🚀</p>
 
-    <img src="https://wallpaperaccess.com/full/22933.jpg" width="300" style="border-radius:20px;">
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen style="border:3px solid purple;"></iframe>
+        </div>
 
-    <br><br>
+        <br>
 
-    <a href="https://youtube.com/@ar_manga_01" target="_blank">
-        <button class="btn">🎬 Visit My Channel</button>
-    </a>
-<br><br>
+        <a href="https://youtube.com/@ar_manga_01" target="_blank">
+            <button class="btn">🎬 Visit My Channel</button>
+        </a>
+    </div>
 
-<div class="video-box">
-    <iframe 
-        src="https://www.youtube.com/embed/@ar_manga_01"
-        allowfullscreen>
-    </iframe>
-</div>
-    <p style="margin-top:50px;">💪 Created by Rehaan</p>
+    <!-- STATS -->
+    <div class="stats fade">
+        <div>🎬 100+ Videos</div>
+        <div>🔥 500+ Fans</div>
+        <div>❤️ Daily Uploads</div>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="features fade">
+        <div class="card">
+            <h2>🎬 Content</h2>
+            <p>Anime edits & shorts</p>
+        </div>
+
+        <div class="card">
+            <h2>🔥 Passion</h2>
+            <p>Love for anime</p>
+        </div>
+
+        <div class="card">
+            <h2>🚀 Growth</h2>
+            <p>Building a strong fanbase</p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>💪 Created by Rehaan</p>
+    </div>
 
 </body>
 </html>
-.glow {
-    font-size: 50px;
-    color: white;
-    text-align: center;
-    animation: glow 1s infinite alternate;
-}
-
-@keyframes glow {
-    from {
-        text-shadow: 0 0 10px purple;
-    }
-    to {
-        text-shadow: 0 0 20px pink;
-    }
-}
-.video-box {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-}
-
-.video-box iframe {
-    width: 80%;
-    max-width: 500px;
-    height: 280px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px purple;
-}
