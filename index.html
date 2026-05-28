@@ -61,11 +61,12 @@
     </a>
 <br><br>
 
-<iframe width="300" height="170"
-src="https://www.youtube.com/embed/mdrehaan258512"
-frameborder="0"
-allowfullscreen>
-</iframe>
+<div class="video-box">
+    <iframe 
+        src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+        allowfullscreen>
+    </iframe>
+</div>
     <p style="margin-top:50px;">💪 Created by Rehaan</p>
 
 </body>
@@ -84,4 +85,17 @@ allowfullscreen>
     to {
         text-shadow: 0 0 20px pink;
     }
+}
+.video-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.video-box iframe {
+    width: 80%;
+    max-width: 500px;
+    height: 280px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px purple;
 }
