@@ -8,131 +8,100 @@ body {
     margin: 0;
     font-family: Arial;
     color: white;
-    text-align: center;
     background: black;
+    text-align: center;
     overflow-x: hidden;
 }
 
-/* AURA BACKGROUND */
-body::before {
-    content: "";
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, white 1px, transparent 1px);
-    background-size: 40px 40px;
-    animation: auraMove 8s linear infinite;
-    opacity: 0.15;
-}
-@keyframes auraMove {
-    from { transform: translateY(0); }
-    to { transform: translateY(40px); }
+/* APP UI CONTAINER */
+.app {
+    max-width: 500px;
+    margin: auto;
+    border: 2px solid silver;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 40px white;
 }
 
 /* NAVBAR */
 .navbar {
-    background: rgba(0,0,0,0.8);
+    background: #111;
     padding: 15px;
-    position: sticky;
-    top: 0;
 }
 .navbar a {
     color: silver;
-    margin: 15px;
+    margin: 10px;
     text-decoration: none;
-    font-weight: bold;
 }
 
-/* SECTION */
+/* SECTIONS */
 section {
-    padding: 60px;
+    padding: 40px;
 }
 
 /* TITLE */
 .glow {
-    font-size: 50px;
-    color: #eee;
-    text-shadow: 0 0 20px white, 0 0 40px silver;
+    font-size: 35px;
+    text-shadow: 0 0 20px white;
 }
 
 /* VIDEO */
 iframe {
-    width: 90%;
-    max-width: 550px;
-    height: 300px;
-    border-radius: 12px;
-    border: 2px solid silver;
-    box-shadow: 0 0 30px white;
+    width: 100%;
+    height: 220px;
+    border: none;
 }
 
 /* BUTTON */
 .btn {
-    padding: 12px 25px;
+    padding: 10px 20px;
     background: silver;
-    color: black;
     border: none;
     border-radius: 10px;
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-/* CARDS */
-.card {
-    background: #111;
-    margin: 15px;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 20px silver;
+    margin-top: 15px;
 }
 
 /* GALLERY */
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
 .gallery img {
-    width: 250px;
-    margin: 10px;
-    border-radius: 12px;
-    border: 2px solid silver;
-    box-shadow: 0 0 20px white;
-    transition: 0.3s;
-    cursor: pointer;
-}
-.gallery img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 40px white;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
 }
 
 /* POPUP */
 #popup {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.95);
+    top: 0;
+    left: 0;
     justify-content: center;
     align-items: center;
 }
 #popup img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
+    width: 90%;
 }
 
-/* FOOTER */
-.footer {
-    padding: 20px;
-    background: black;
-    color: gray;
+/* CURSOR AURA */
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 20px white, 0 0 40px silver;
 }
 </style>
 </head>
 
 <body>
+
+<div class="cursor" id="cursor"></div>
+
+<div class="app">
 
 <div class="navbar">
     <a href="#home">Home</a>
@@ -141,28 +110,21 @@ iframe {
 </div>
 
 <section id="home">
-    <h1 class="glow">👑 Mastered Ultra Instinct 👑</h1>
-
+    <h1 class="glow">👑 MUI GOD MODE 👑</h1>
     <p id="typing"></p>
     <p id="time"></p>
 
     <iframe src="https://www.youtube.com/embed/REPLACE_ID"></iframe>
 
-    <br>
-
-    <a href="https://youtube.com/@ar_manga_01" target="_blank">
-        <button class="btn">⚡ Enter God Mode ⚡</button>
-    </a>
+    <button class="btn">⚡ Enter Power ⚡</button>
 </section>
 
-<!-- GALLERY -->
-<h2>⚡ Legendary Battles ⚡</h2>
+<h2>⚡ Battles ⚡</h2>
 
 <div class="gallery">
     <img src="https://images.alphacoders.com/100/1002177.jpg" onclick="openImg(this.src)">
     <img src="https://images.alphacoders.com/101/1011344.jpg" onclick="openImg(this.src)">
     <img src="https://images.alphacoders.com/132/1328388.jpeg" onclick="openImg(this.src)">
-    <img src="https://images.alphacoders.com/131/1310203.jpeg" onclick="openImg(this.src)">
 </div>
 
 <div id="popup" onclick="closeImg()">
@@ -170,54 +132,55 @@ iframe {
 </div>
 
 <section id="about">
-    <h2>👤 About Me</h2>
-    <div class="card">
-        I am MOHAMMED REHAN <br>
-        Dragon Ball Editor ⚡ <br>
-        Mastered Ultra Instinct edits 👑
-    </div>
+    <h2>About</h2>
+    <p>@ar_manga_01 | Anime Editor ⚡</p>
 </section>
 
 <section id="contact">
-    <h2>📞 Contact</h2>
-    <div class="card">
-        YouTube: @ar_manga_01 <br>
-        Email: yourmail@gmail.com
-    </div>
+    <h2>Contact</h2>
+    <p>YouTube: @ar_manga_01</p>
 </section>
 
-<div class="footer">
-    👑 Built by Rehaan | GOD MODE
 </div>
+
+<!-- BACKGROUND MUSIC -->
+<audio autoplay loop>
+    <source src="https://www.myinstants.com/media/sounds/ui-theme.mp3" type="audio/mpeg">
+</audio>
 
 <script>
 // TIME
-function updateTime() {
-    let now = new Date();
-    document.getElementById("time").innerText = "⏰ " + now.toLocaleTimeString();
-}
-setInterval(updateTime, 1000);
+setInterval(()=>{
+    document.getElementById("time").innerText = new Date().toLocaleTimeString();
+},1000);
 
 // TYPING
-let text = "Calm Mind... Perfect Movement ⚡";
-let i = 0;
-function typing() {
-    if (i < text.length) {
-        document.getElementById("typing").innerHTML += text.charAt(i);
+let t="Mastered Ultra Instinct ⚡";
+let i=0;
+function type(){
+    if(i<t.length){
+        document.getElementById("typing").innerHTML+=t[i];
         i++;
-        setTimeout(typing, 40);
+        setTimeout(type,50);
     }
 }
-typing();
+type();
 
-// IMAGE ZOOM
-function openImg(src) {
-    document.getElementById("popup").style.display = "flex";
-    document.getElementById("popupImg").src = src;
+// IMAGE POPUP
+function openImg(src){
+    popup.style.display="flex";
+    popupImg.src=src;
 }
-function closeImg() {
-    document.getElementById("popup").style.display = "none";
+function closeImg(){
+    popup.style.display="none";
 }
+
+// CURSOR AURA
+document.addEventListener("mousemove",(e)=>{
+    let c=document.getElementById("cursor");
+    c.style.left=e.clientX+"px";
+    c.style.top=e.clientY+"px";
+});
 </script>
 
 </body>
