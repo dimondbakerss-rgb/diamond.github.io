@@ -1,177 +1,160 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Anime King 👑</title>
+<title>Shadow Monarch 👑</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial;
-            color: white;
-            background: radial-gradient(circle, #1a001a, black);
-            overflow-x: hidden;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    color: white;
+    text-align: center;
+    background: black;
+    overflow-x: hidden;
+}
 
-        .navbar {
-            background: black;
-            padding: 15px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-        }
+/* BACKGROUND PARTICLES */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, purple 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: moveBg 10s linear infinite;
+    opacity: 0.2;
+}
 
-        .navbar a {
-            color: white;
-            margin: 20px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+@keyframes moveBg {
+    from {transform: translateY(0);}
+    to {transform: translateY(50px);}
+}
 
-        .hero {
-            text-align: center;
-            padding: 50px;
-            background: linear-gradient(to right, black, purple);
-        }
+/* HERO */
+.hero {
+    padding: 50px;
+    animation: fadeIn 2s ease;
+}
 
-        .fade {
-            animation: fadeIn 2s ease;
-        }
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+/* TITLE */
+.glow {
+    font-size: 50px;
+    color: violet;
+    text-shadow: 0 0 20px purple;
+}
 
-        .glow {
-            font-size: 50px;
-            animation: glow 1s infinite alternate;
-        }
+/* TYPING TEXT */
+#typing {
+    font-size: 22px;
+    color: violet;
+}
 
-        @keyframes glow {
-            from { text-shadow: 0 0 10px purple, 0 0 20px purple; }
-            to { text-shadow: 0 0 20px pink, 0 0 30px pink; }
-        }
+/* VIDEO */
+.video-box iframe {
+    width: 90%;
+    max-width: 500px;
+    height: 250px;
+    border-radius: 12px;
+    border: 2px solid purple;
+    box-shadow: 0 0 20px purple;
+}
 
-        .video-box {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
+/* BUTTON */
+.btn {
+    padding: 12px 20px;
+    background: purple;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
 
-        .video-box iframe {
-            width: 80%;
-            max-width: 600px;
-            height: 320px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px purple;
-        }
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px violet;
+}
 
-        .btn {
-            padding: 12px 20px;
-            background: purple;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+/* CARDS */
+.features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
-        .btn:hover {
-            box-shadow: 0 0 20px purple;
-            transform: scale(1.1);
-        }
+.card {
+    background: #1a001a;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 12px;
+    width: 200px;
+    transition: 0.3s;
+}
 
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            margin: 40px;
-            font-size: 18px;
-        }
-
-        .features {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            background: #1c1c1c;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 15px;
-            width: 250px;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px purple;
-        }
-
-        .footer {
-            background: black;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-    </style>
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px purple;
+}
+</style>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </div>
-
-    <!-- HERO -->
-    <div class="hero fade">
-        
-
-        <div class="video-box">
-            <iframe src="https://www.youtube.com/embed/@ar_manga_01" allowfullscreen style="border:3px solid purple;"></iframe>
-        </div>
-
-        <br>
-
-        <a href="https://youtube.com/@ar_manga_01" target="_blank">
-            <button class="btn">🎬 Visit My Channel</button>
-        </a>
-    </div> 
+<div class="hero">
     <h1 class="glow">👑 Shadow Monarch 👑</h1>
-<p>Arise... My Shadow Army ⚔️</p>
-    <!-- STATS -->
-    <div class="stats fade">
-        <div>🎬 100+ Videos</div>
-        <div>🔥 500+ Fans</div>
-        <div>❤️ Daily Uploads</div>
+
+    <!-- TYPING TEXT -->
+    <p id="typing"></p>
+
+    <!-- LIVE TIME -->
+    <p id="time"></p>
+
+    <!-- VIDEO -->
+    <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/REPLACE_ID" allowfullscreen></iframe>
     </div>
 
-    <!-- FEATURES -->
-    <div class="features fade">
-        <div class="card">
-            <h2>🎬 Content</h2>
-            <p>Anime edits & shorts</p>
-        </div>
+    <br>
 
-        <div class="card">
-            <h2>🔥 Passion</h2>
-            <p>Love for anime</p>
-        </div>
+    <!-- BUTTON -->
+    <a href="https://youtube.com/@ar_manga_01" target="_blank">
+        <button class="btn">Enter the Shadow Domain 💀</button>
+    </a>
+</div>
 
-        <div class="card">
-            <h2>🚀 Growth</h2>
-            <p>Building a strong fanbase</p>
-        </div>
-    </div>
+<!-- FEATURES -->
+<div class="features">
+    <div class="card">⚔️ Power</div>
+    <div class="card">👑 Authority</div>
+    <div class="card">💀 Evolution</div>
+</div>
 
-    <!-- FOOTER -->
-    <div class="footer">
-        <p>💪 Created by Rehaan</p>
-    </div>
+<script>
+// LIVE TIME
+function updateTime() {
+    let now = new Date();
+    document.getElementById("time").innerText = "⏰ " + now.toLocaleTimeString();
+}
+setInterval(updateTime, 1000);
+
+// TYPING EFFECT
+let text = "Arise... My Shadow Army ⚔️";
+let i = 0;
+
+function typing() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing, 50);
+    }
+}
+typing();
+</script>
 
 </body>
 </html>
