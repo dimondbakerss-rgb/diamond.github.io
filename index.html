@@ -8,16 +8,24 @@ body {
     margin: 0;
     font-family: Arial;
     color: white;
-    background: black;
     text-align: center;
-    overflow-x: hidden;
+
+    background: url("https://images.alphacoders.com/100/1002177.jpg") no-repeat center center fixed;
+    background-size: cover;
 }
 
-/* APP UI CONTAINER */
+/* DARK OVERLAY FOR READABILITY */
+section {
+    background: rgba(0,0,0,0.6);
+    margin: 20px;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+/* APP UI */
 .app {
     max-width: 500px;
     margin: auto;
-    border: 2px solid silver;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 0 40px white;
@@ -25,18 +33,14 @@ body {
 
 /* NAVBAR */
 .navbar {
-    background: #111;
+    background: rgba(0,0,0,0.8);
     padding: 15px;
 }
 .navbar a {
     color: silver;
     margin: 10px;
     text-decoration: none;
-}
-
-/* SECTIONS */
-section {
-    padding: 40px;
+    font-weight: bold;
 }
 
 /* TITLE */
@@ -49,7 +53,7 @@ section {
 iframe {
     width: 100%;
     height: 220px;
-    border: none;
+    border-radius: 10px;
 }
 
 /* BUTTON */
@@ -66,6 +70,7 @@ iframe {
     width: 100%;
     margin-top: 10px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 /* POPUP */
@@ -82,6 +87,7 @@ iframe {
 }
 #popup img {
     width: 90%;
+    border-radius: 10px;
 }
 
 /* CURSOR AURA */
@@ -110,16 +116,21 @@ iframe {
 </div>
 
 <section id="home">
-    <h1 class="glow">👑 MUI GOD MODE 👑</h1>
+    <h1 class="glow">👑 Mastered Ultra Instinct 👑</h1>
+
     <p id="typing"></p>
     <p id="time"></p>
 
     <iframe src="https://www.youtube.com/embed/REPLACE_ID"></iframe>
 
-    <button class="btn">⚡ Enter Power ⚡</button>
+    <br>
+
+    <a href="https://youtube.com/@ar_manga_01" target="_blank">
+        <button class="btn">⚡ Enter God Mode ⚡</button>
+    </a>
 </section>
 
-<h2>⚡ Battles ⚡</h2>
+<h2>⚡ Legendary Battles ⚡</h2>
 
 <div class="gallery">
     <img src="https://images.alphacoders.com/100/1002177.jpg" onclick="openImg(this.src)">
@@ -143,7 +154,7 @@ iframe {
 
 </div>
 
-<!-- BACKGROUND MUSIC -->
+<!-- MUSIC -->
 <audio autoplay loop>
     <source src="https://www.myinstants.com/media/sounds/ui-theme.mp3" type="audio/mpeg">
 </audio>
@@ -177,9 +188,8 @@ function closeImg(){
 
 // CURSOR AURA
 document.addEventListener("mousemove",(e)=>{
-    let c=document.getElementById("cursor");
-    c.style.left=e.clientX+"px";
-    c.style.top=e.clientY+"px";
+    cursor.style.left=e.clientX+"px";
+    cursor.style.top=e.clientY+"px";
 });
 </script>
 
