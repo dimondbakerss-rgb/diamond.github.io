@@ -1,196 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Mastered Ultra Instinct 👑</title>
+<title>Brain Game 🧠</title>
 
 <style>
 body {
-    margin: 0;
     font-family: Arial;
-    color: white;
     text-align: center;
-
-    background: url("https://images.alphacoders.com/100/1002177.jpg") no-repeat center center fixed;
-    background-size: cover;
+    background: black;
+    color: white;
 }
 
-/* DARK OVERLAY FOR READABILITY */
-section {
-    background: rgba(0,0,0,0.6);
-    margin: 20px;
-    border-radius: 15px;
-    padding: 30px;
+.box {
+    margin-top: 100px;
 }
 
-/* APP UI */
-.app {
-    max-width: 500px;
-    margin: auto;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 0 40px white;
+input {
+    padding: 10px;
+    font-size: 18px;
 }
 
-/* NAVBAR */
-.navbar {
-    background: rgba(0,0,0,0.8);
-    padding: 15px;
-}
-.navbar a {
-    color: silver;
-    margin: 10px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* TITLE */
-.glow {
-    font-size: 35px;
-    text-shadow: 0 0 20px white;
-}
-
-/* VIDEO */
-iframe {
-    width: 100%;
-    height: 220px;
-    border-radius: 10px;
-}
-
-/* BUTTON */
-.btn {
+button {
     padding: 10px 20px;
+    font-size: 18px;
+    margin-top: 10px;
     background: silver;
     border: none;
     border-radius: 10px;
-    margin-top: 15px;
 }
 
-/* GALLERY */
-.gallery img {
-    width: 100%;
-    margin-top: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-/* POPUP */
-#popup {
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.95);
-    top: 0;
-    left: 0;
-    justify-content: center;
-    align-items: center;
-}
-#popup img {
-    width: 90%;
-    border-radius: 10px;
-}
-
-/* CURSOR AURA */
-.cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius: 50%;
-    pointer-events: none;
-    box-shadow: 0 0 20px white, 0 0 40px silver;
+#result {
+    margin-top: 20px;
+    font-size: 20px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="cursor" id="cursor"></div>
+<div class="box">
+    <h1>🧠 Brain Game</h1>
 
-<div class="app">
+    <p>Guess number (1-10)</p>
 
-<div class="navbar">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-</div>
-
-<section id="home">
-    <h1 class="glow">👑 Mastered Ultra Instinct 👑</h1>
-
-    <p id="typing"></p>
-    <p id="time"></p>
-
-    <iframe src="https://www.youtube.com/embed/REPLACE_ID"></iframe>
+    <input id="guess" type="number">
 
     <br>
 
-    <a href="https://youtube.com/@ar_manga_01" target="_blank">
-        <button class="btn">⚡ Enter God Mode ⚡</button>
-    </a>
-</section>
+    <button onclick="check()">Check</button>
 
-<h2>⚡ Legendary Battles ⚡</h2>
-
-<div class="gallery">
-    <img src="https://images.alphacoders.com/100/1002177.jpg" onclick="openImg(this.src)">
-    <img src="https://images.alphacoders.com/101/1011344.jpg" onclick="openImg(this.src)">
-    <img src="https://images.alphacoders.com/132/1328388.jpeg" onclick="openImg(this.src)">
+    <p id="result"></p>
 </div>
-
-<div id="popup" onclick="closeImg()">
-    <img id="popupImg">
-</div>
-
-<section id="about">
-    <h2>About</h2>
-    <p>@ar_manga_01 | Anime Editor ⚡</p>
-</section>
-
-<section id="contact">
-    <h2>Contact</h2>
-    <p>YouTube: @ar_manga_01</p>
-</section>
-
-</div>
-
-<!-- MUSIC -->
-<audio autoplay loop>
-    <source src="https://www.myinstants.com/media/sounds/ui-theme.mp3" type="audio/mpeg">
-</audio>
 
 <script>
-// TIME
-setInterval(()=>{
-    document.getElementById("time").innerText = new Date().toLocaleTimeString();
-},1000);
+let secret = 5;
 
-// TYPING
-let t="Mastered Ultra Instinct ⚡";
-let i=0;
-function type(){
-    if(i<t.length){
-        document.getElementById("typing").innerHTML+=t[i];
-        i++;
-        setTimeout(type,50);
+function check() {
+    let guess = document.getElementById("guess").value;
+
+    if (guess == secret) {
+        document.getElementById("result").innerText = "🎉 Correct!";
+    } else {
+        document.getElementById("result").innerText = "❌ Try again";
     }
 }
-type();
-
-// IMAGE POPUP
-function openImg(src){
-    popup.style.display="flex";
-    popupImg.src=src;
-}
-function closeImg(){
-    popup.style.display="none";
-}
-
-// CURSOR AURA
-document.addEventListener("mousemove",(e)=>{
-    cursor.style.left=e.clientX+"px";
-    cursor.style.top=e.clientY+"px";
-});
 </script>
 
 </body>
